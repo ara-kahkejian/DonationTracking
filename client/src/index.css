@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* RTL support */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* RTL specific adjustments */
+.rtl .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.rtl .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Style overrides for language switching */
+html[dir="rtl"] .recharts-wrapper {
+  direction: ltr; /* Fix charts in RTL mode */
+  text-align: left;
+}
